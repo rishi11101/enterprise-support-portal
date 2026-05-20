@@ -21,20 +21,26 @@ A full-stack customer support portal with real-time messaging, role-based access
 
 ## Setup & Installation
 ### Backend
+```
 cd server
 npm install
 node server.js
+```
 
 ### Frontend
+```
 cd frontend
 npm install
 npm run dev
+```
 
 ## Environment Variables
 Create a `.env` file in `/server`:
+```
 PORT=5000
 DATABASE_URL=your_postgres_url
 JWT_SECRET=your_secret
+```
 
 ## Test Credentials
 - **Admin:** admin1234@gmail.com / admin1234
