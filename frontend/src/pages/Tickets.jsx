@@ -4,7 +4,7 @@ import { AuthContext } from '../context/AuthContext';
 import { io } from 'socket.io-client';
 import api from '../api/axios';
 
-const socket = io('http://localhost:5000');
+const socket = io(import.meta.env.VITE_API_URL.replace('/api', '') || "http://localhost:5000");
 
 export default function Tickets() {
 

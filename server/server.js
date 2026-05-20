@@ -12,16 +12,23 @@ dotenv.config();
 
 const app = express();
 
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
+
 // Middlewares
-app.use(cors());
+app.use(cors({
+    origin: FRONTEND_URL,
+    credentials: true
+}));
+
 app.use(express.json());
 
 // upgrade Express to an HTTP server for Socket.io
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
     cors: {
-        origin: "http://localhost:5173",
-        methods: ["GET", "POST"]
+        origin: FRONTEND_URL,
+        methods: ["GET", "POST"],
+        credentials: true
     }
 });
 
